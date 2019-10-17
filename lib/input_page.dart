@@ -116,26 +116,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-/*
-
-// gender = 1: male, 2: female
-void updateColor(int gender) {
-  if (gender == 1) {
-    if (maleCardColor == inActiveCardColor) {
-      maleCardColor = activeCardColor;
-      femaleCardColor = inActiveCardColor;
-    } else {
-      maleCardColor = inActiveCardColor;
-    }
-  }
-
-  if (gender == 2) {
-    if (femaleCardColor == inActiveCardColor) {
-      femaleCardColor = activeCardColor;
-      maleCardColor = inActiveCardColor;
-    } else {
-      femaleCardColor = inActiveCardColor;
-    }
-  }
-}*/
