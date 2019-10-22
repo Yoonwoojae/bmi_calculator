@@ -17,6 +17,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 80;
+  int age = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +103,7 @@ class _InputPageState extends State<InputPage> {
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                          RoundSliderOverlayShape(overlayRadius: 27.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -122,10 +124,59 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(color: activeCardColor),
+                  child: ReusableCard(
+                    color: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'WEIGHT',
+                          style: labelTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: <Widget>[
+                            Text(
+                              weight.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Text(
+                              'kg',
+                              style: labelTextStyle,
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            FloatingActionButton(
+                              backgroundColor: Color(0xFF4CF5E),
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(color: activeCardColor),
+                  child: ReusableCard(
+                    color: activeCardColor,
+                  ),
                 ),
               ],
             ),
@@ -138,6 +189,20 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      constraints: BoxConstraints.tightFor(
+        width: 56,
+        height: 56,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4C4C),
     );
   }
 }
