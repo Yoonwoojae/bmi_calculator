@@ -16,11 +16,11 @@ class CalculatorBrain {
 
   String getResult() {
     if (_bmi > 25) {
-      return 'Overweight';
+      return '과체중';
     } else if (_bmi > 18.5) {
-      return 'Normal';
+      return '보통';
     } else {
-      return 'Underweight';
+      return '저체중';
     }
   }
 
@@ -28,9 +28,9 @@ class CalculatorBrain {
     if (_bmi > 25) {
       return '살뺍시다 꿀꿀이여';
     } else if (_bmi > 18.5) {
-      return '보통이네요. 운동합시다';
+      return '보통 이네요. 운동합시다';
     } else {
-      return '몸짱이시네요';
+      return '저체중 이네요, 먹으면서 운동합시다';
     }
   }
 }
