@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'constants.dart';
-import 'result_page.dart';
+import '../components/icon_content.dart';
+import '../components/reusable_card.dart';
+import '../constants.dart';
+import '../components/bottom_button.dart';
+import '../components/round_icon_button.dart';
 
 enum Gender {
   male,
@@ -229,49 +230,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultPage()));
-            },
-            child: Container(
-              child: Center(
-                child: Text(
-                  '계산하기',
-                  style: kLargeButtonTextStyle,
-                ),
-              ),
-              color: bottomContainerColor,
-              padding: EdgeInsets.only(bottom: 20.0),
-              margin: EdgeInsets.all(10.0),
-              width: double.infinity,
-              height: bottomContainerHeight,
-            ),
-          ),
+          BottomButton(buttonTitle: '계산하기'),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  final IconData icon;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      elevation: 0.0,
-      constraints: BoxConstraints.tightFor(
-        width: 50,
-        height: 50,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4C4C),
     );
   }
 }
