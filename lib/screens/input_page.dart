@@ -5,6 +5,7 @@ import '../components/reusable_card.dart';
 import '../constants.dart';
 import '../components/bottom_button.dart';
 import '../components/round_icon_button.dart';
+import 'result_page.dart';
 
 enum Gender {
   male,
@@ -230,7 +231,17 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(buttonTitle: '계산하기'),
+          BottomButton(
+            buttonTitle: '계산하기',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/result_page.dart';
 import '../constants.dart';
 
 class BottomButton extends StatelessWidget {
@@ -11,14 +10,7 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ResultPage(),
-          ),
-        );
-      },
+      onTap: onTap,
       child: Container(
         child: Center(
           child: Text(
